@@ -1,0 +1,28 @@
+{
+  "name": "facturacionmanualbackend",
+  "version": "1.0.0",
+  "description": "backend",
+  "main": "index.js",
+  "scripts": {
+    "dev": "lite-server",
+    "start":"node server.js"
+  },
+  "author": "Maximiliano Salamone",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^8.0.0",
+    "lite-server": "^2.5.3",
+    "lodash.merge": "^4.6.2",
+    "nodemailer": "^6.2.1",
+    "open": "^6.3.0",
+    "pug": "^2.0.3",
+    "request-promise": "^4.2.4",
+    "sequelize": "^5.8.7",
+    "soap": "^0.28.0",
+    "tedious": "^6.1.2",
+    "winston": "^2.4.0",
+    "winston-mail": "^2.0.0",
+    "winston-mongodb": "^5.0.0",
+    "wkhtmltopdf": "^0.3.4"
+  }
+}

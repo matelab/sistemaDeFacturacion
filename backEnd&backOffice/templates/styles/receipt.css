@@ -1,0 +1,279 @@
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  margin: 0;
+  margin: 0;
+}
+.clearfix:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+a {
+  color: #5d6975;
+  text-decoration: underline;
+}
+
+body {
+  position: relative;
+  color: #000;
+  background-color: #f1f1f1;
+  font: normal 12px/19px Arial, sans-serif;
+}
+.content-tables {
+  width: 900px;
+  margin: 0 auto;
+  background-color: #fff;
+  padding: 0 10px;
+}
+
+header {
+  padding: 10px 0 15px 0;
+  margin-bottom: 25px;
+  border-bottom: 1px solid #c1ced9;
+}
+
+#logo {
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+#logo img {
+  width: 222px;
+}
+.datos-factura {
+  position: relative;
+  border-top: 1px solid #c1ced9;
+  padding-bottom: 16px;
+}
+.tipoFactura {
+  position: absolute;
+  left: 50%;
+  margin-left: -25px;
+  top: 26px;
+  color: #000;
+  font-size: 48px;
+  line-height: 48px;
+  text-align: center;
+  border: 1px solid #000;
+  padding: 5px 5px;
+  max-height: 98px;
+  background-color: #fff;
+}
+.sub-tipoFactura {
+  font-size: 12px;
+  text-align: center;
+  color: #000;
+}
+
+#project {
+  float: right;
+  margin: 0 8px;
+}
+
+#project span {
+  color: #000;
+  text-align: right;
+  margin-right: 10px;
+  display: inline-block;
+}
+
+#company {
+  float: left;
+  text-align: left;
+  margin: 0 8px;
+}
+
+#project div,
+#company div {
+  white-space: nowrap;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+
+.table-anexo {
+  margin-bottom: 25px;
+}
+table th {
+  padding: 8px 4px;
+  color: #fff;
+  font-weight: bold;
+  background-color: #0086aa;
+  text-align: center !important;
+  white-space: nowrap;
+  border-top: 1px solid #ddd;
+  border-bottom: 1px solid #ddd;
+  border-right: 1px solid #ddd;
+}
+table th:last-child {
+  border-right: 0px;
+}
+
+table .cliente,
+table .numeroCae {
+  font-weight: bold;
+}
+table .numeroCae {
+  background-color: #0086aa;
+  color: #fff;
+}
+table td {
+  padding: 8px 13px;
+  text-align: left;
+}
+
+.data-table {
+  background-color: rgba(42, 87, 98, 0.1);
+  margin-right: 8px;
+  margin-left: 8px;
+  overflow: hidden;
+}
+.first-table,
+.second-table {
+  height: 169px;
+  margin-bottom: 25px;
+  border-left: 1px solid #ddd;
+  border-right: 1px solid #ddd;
+  border-bottom: 1px solid #ddd;
+}
+.first-table table th,
+.second-table table th {
+  text-align: left;
+  padding: 10px 13px 10px 13px;
+}
+.first-table table td {
+  padding: 5px 13px;
+}
+.third-table {
+  margin-bottom: 25px;
+  clear: both;
+  border-left: 1px solid #ddd;
+  border-right: 1px solid #ddd;
+}
+.fourth-table,
+.fifth-table {
+  float: left;
+  width: 55%;
+  height: 182px;
+  margin-bottom: 35px;
+  padding: 0px 0px 10px 0px;
+  border: 1px solid #ddd;
+}
+.fourth-table .codigo-barras {
+  width: 100%;
+  height: auto;
+}
+.fifth-table {
+  width: 41.3%;
+}
+.dotted-line {
+  border-bottom: 1px dashed #000;
+  display: block;
+}
+.third-table table td,
+.fourth-table table td {
+  text-align: center;
+}
+.emision {
+  line-height: 20px;
+  margin: 0 0px 12px 0px;
+}
+.titleFechaEmision,
+.title-tipo-factura {
+  font-weight: bold;
+}
+.total-final {
+  font-weight: bold;
+  font-size: 18px;
+}
+.fifth-table table tr td:nth-child(2) {
+  text-align: right;
+}
+.print{
+  width: 100%;
+}
+.third-table table td{
+  border-top: 1px solid #ddd;
+  border-bottom: 1px solid #ddd;
+  border-right: 1px solid #ddd;
+}
+.third-table table td:first-child{
+  border-left: 0px;
+}
+.third-table table .desc{
+  text-align: left;
+}
+.third-table table .total{
+  max-width: 100px;
+  min-width: 95px;
+  text-align: right;
+}
+.third-table table .cant{
+  text-align: center;
+}
+@media print {
+  body {
+    position: relative;
+    background-color: #000;
+  }
+  .print{
+    display: block;
+  }
+   header {
+    border-bottom: 1px solid #000;
+  }
+  .data-table {
+    background-color: transparent;
+    overflow: visible;
+  }
+  .third-table {
+    height:480px;
+  }
+  .first-table,
+  .second-table,
+  .third-table{
+    border-left: 1px solid #000;
+    border-right: 1px solid #000;
+    border-bottom: 1px solid #000;
+  }
+  
+  table th {
+      padding: 8px 4px;
+      background-color: #fff;
+      color: #000;  
+  }
+  .third-table table td{
+    border-top: 0px;
+    border-bottom: 0px;
+    border-right: 0px;
+  }
+  table th {
+    border-top: 3px solid #000;
+    border-bottom: 3px solid #000;
+    border-right: 3px solid #000;
+    background-color: #f5f5f5;
+    margin-bottom: 10px;
+  }
+  .first-table table tr:first-child th,
+  .second-table table tr:first-child th,
+  .third-table table tr:first-child th{
+    border-left: 3px solid #000;
+    border-right: 3px solid #000;
+  }
+.fourth-table,
+.fifth-table {
+  border: 3px solid #000;
+}
+  table .numeroCae {
+    background-color: #fff;
+    color: #000;
+  }
+  
+}

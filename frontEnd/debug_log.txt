@@ -1,0 +1,14 @@
+Inicio del proyecto con VueJS y NodeJS
+Requisitos: ver package.json
+se ve en http://localhost:8080/ y localhost:5000
+
+El proyecto comienza en index.html, que solo sirve de entrada para main.js y app.vue, que tiene un router y por ahora 3 paginas, Home, CrearComprobante y BuscarComprobante.
+.
+
+Para el back voy a intentar hacer uso de .js del backoffice de Suscripciones, services/afip.js, constants.js y receiptauthorizer.js en esa carpeta. De model voy a usar otros tantos
+
+
+EJECUCION FRONT: Abrir una terminal con npm run serve
+EJECUCION BACK: Abrir una terminar con npm start
+
+AFIP: Cada 12 hrs hay que renovar la firma digital que usa. Esta requiere un servicio aparte. En mi caso use un XAMPP sirviendo un PHP que se conecta y crea un archivo TA.XML. El backend lee este archivo y obtiene de el un token y un sign.

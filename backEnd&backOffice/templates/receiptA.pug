@@ -1,0 +1,119 @@
+doctype html
+html(lang='en')
+  head
+    meta(charset='utf-8')
+    title El Cronista Comercial S.A.
+    link(rel="shortcut icon", href='templates/images/favicon.ico')
+    link(rel='stylesheet', href='templates/styles/receipt.css', media='all')
+    script(src='templates/JsBarcode.itf.min.js')
+  body
+    .content-tables.clearfix
+      header.clearfix
+        #logo
+          img(src='templates/images/apertura.svg' style="max-height: 35px")
+          img(src='templates/images/cronista.svg' style="max-height: 35px")
+          img(src='templates/images/infotechnology.svg' style="max-height: 35px")
+        .datos-factura
+          .tipoFactura
+            .letra-factura #{receiptTypeLetter}
+            .sub-tipoFactura Código #{receiptTypeCode}
+        #company.clearfix
+          div El Cronista Comercial S.A.
+          div Av. Paseo Colón 746 1° (C1063ACU) CABA
+          div Teléfono: (011) 4121-9300   Fax: (011) 4121-9205
+          div I.V.A Responsable Inscripto
+        #project
+          .emision
+            .tipo-factura
+              span.title-tipo-factura #{receiptType} nro:
+              span.numeroTipo #{displayNumber}
+            .fechaEmision
+              span.titleFechaEmision Fecha Emisión:
+              span #{dateDone}
+            .fechaEmision
+              span.titleFechaEmision Fecha Imputación:
+              span #{dateImputed}
+          div
+            span C.U.I.T:
+            span  30-50009002-9
+          div
+            span Impuestos Internos:
+            span  Exento
+          div
+            span Ingresos Brutos:
+            span  901-21813-9
+          div
+            span Inicio de Actividad:
+            span  10/10/1959
+      .data-table.first-table.second-table
+        table
+          thead
+            tr
+              th.cliente(colspan='1') #{customer.businessName}
+              th.cliente(colspan='1') C.U.I.T.: #{customer.cuit}
+          tbody
+            tr
+              td.dire Calle: #{customer.address}
+              td.dire Localidad: #{customer.locality}
+            tr
+              td I.V.A: #{customer.taxCondition}
+              td Nro.Cliente: #{customer.id}
+            tr  
+              td Cond. de Cobro: #{collectionMethod}
+              td Observaciones: #{observations}
+            tr
+              td Cotización: #{exchangeRate}
+      .data-table.third-table
+        table
+          thead
+            tr
+              th(style="width:50%").desc Descripción
+              th(style="width:10%").cant Precio Unitario
+              th(style="width:10%").cant Cantidad
+              th(style="width:10%").total Subtotal
+              th(style="width:10%").cant Alicuota IVA
+              th(style="width:10%").total Subtotal c/IVA
+          tbody
+            each item in items
+              tr
+                td.desc #{item.description}
+                td.total.cant #{item.unitValueNoTax}
+                td.total.cant #{item.quantity}
+                td.total #{item.totalNoTax}
+                td.total.cant #{item.unitTaxPercentage}%
+                td.total #{item.total}
+            if roundDifference.amount
+              tr
+                td.desc Ajuste por redondeo de decimales
+                td.total.cant
+                td.total.cant
+                td.total
+                td.total.cant
+                td.total #{roundDifference}
+      .data-table.fourth-table
+        table
+          tr
+            td.numeroCae CAE: #{cae}
+          tr
+            td
+              img#barcode.codigo-barras
+      .data-table.fifth-table
+        table
+          tr
+            td Importe Neto Gravado
+            td #{net}
+          tr
+            td I.V.A.
+            td #{vatAmount}
+          tr
+            td Percepciones IIBB #{iibb}%
+            td #{iibbAmount}
+          tr
+            td
+            td
+              span.dotted-line
+          tr
+            td.total-final Importe Total en #{currency}: 
+            td.total-final #{total}
+    script.
+      JsBarcode("#barcode", "#{barcode}");
